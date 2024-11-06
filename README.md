@@ -98,9 +98,21 @@ This C# code demonstrates how to use the **Qdrant** vector search engine with a 
 
 **Qdrant** is a high-performance **vector database** optimized for AI-driven applications
 
-We first run Visual Studio 2022 Community Edition
+We first run Visual Studio 2022 Community Edition and Create a New Project
 
+![image](https://github.com/user-attachments/assets/84ef792c-a675-442e-b8ad-18f8e41e32a1)
 
+We select the console C# project and press the Next button
+
+![image](https://github.com/user-attachments/assets/3443d446-676c-4ab5-bcea-386f4fa67bb8)
+
+We input the project name and location and press the Next button
+
+![image](https://github.com/user-attachments/assets/56e72654-d598-47b9-b47c-add7bb2f837f)
+
+We select the framework .NET 9 and press the Create button
+
+![image](https://github.com/user-attachments/assets/db8ad08f-7e7c-4aa4-95f0-318253dcaf1b)
 
 ## 6. We load the Nuget package
 
