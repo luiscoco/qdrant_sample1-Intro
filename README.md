@@ -92,11 +92,21 @@ We verify in **Docker Desktop**
 
 ![image](https://github.com/user-attachments/assets/253e659a-58e8-48ef-b198-15c1fa7d1951)
 
-## 5. This Sample Repo Code Explanation
+## 5. For creating this repo sample we start creating a C# console application with Visual Studio 2022 and .NET 9
 
 This C# code demonstrates how to use the **Qdrant** vector search engine with a **gRPC** interface
 
 **Qdrant** is a high-performance **vector database** optimized for AI-driven applications
+
+We first run Visual Studio 2022 Community Edition
+
+
+
+## 6. We load the Nuget package
+
+![image](https://github.com/user-attachments/assets/6f460969-77fb-4069-aae6-d2a61847b29c)
+
+## 7. We input the source code in the Program.cs file
 
 Here's a breakdown of what the code does:
 
@@ -277,9 +287,10 @@ var searchResult2 = await client.QueryAsync(
 Console.WriteLine(searchResult2);
 ```
 
-## 6. We run the application and see the results 
+## 8. We run the application and see the results 
 
 **Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
 
+![image](https://github.com/user-attachments/assets/1d543a8d-451f-44c7-8513-145a507c56d1)
 
 
