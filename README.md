@@ -1,4 +1,4 @@
-# Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
+# A. Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
 
 This sample demonstrates a typical workflow of creating a vector collection, adding data points with metadata, and performing similarity searches with optional filtering based on metadata
 
@@ -322,7 +322,7 @@ The **second query** (searchResult2) **filters** results to return vectors with 
 ![image](https://github.com/user-attachments/assets/b3f896dd-fb08-4fcf-8791-db78b64ad15d)
 
 
-# Advanced Qdrant and .NET: Implementing Vector Search with Enhanced Features
+# B. Advanced Qdrant and .NET: Implementing Vector Search with Enhanced Features
 
 This advanced guide expands on basic vector operations in Qdrant with .NET by introducing **multi-field filtering**, **batch processing**, **custom distance metrics**, and **indexing** techniques to optimize search performance in large datasets
 
