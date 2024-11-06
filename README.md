@@ -286,7 +286,7 @@ var searchResult1 = await client.QueryAsync(
     limit: 3
 );
 
-Console.WriteLine("");
+Console.WriteLine("Top 3 similar vectors to the query vector.");
 Console.WriteLine("SearchResult1: " + searchResult1);
 
 var searchResult2 = await client.QueryAsync(
@@ -297,7 +297,7 @@ var searchResult2 = await client.QueryAsync(
     payloadSelector: true
 );
 
-Console.WriteLine("");
+Console.WriteLine("Filters results to return vectors with a city field that matches London");
 Console.WriteLine("SearchResult2: " + searchResult2);
 ```
 
