@@ -303,6 +303,10 @@ Console.WriteLine(searchResult2);
 
 **Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
 
+The **first query** (searchResult1) retrieves the **top 3 similar vectors to the query vector**
+
+The **second query** (searchResult2) **filters** results to return vectors with a **"city"** field that **matches "London"**, also limiting results to the top 3 and including payload data in the response
+
 ![image](https://github.com/user-attachments/assets/b3f896dd-fb08-4fcf-8791-db78b64ad15d)
 
 
