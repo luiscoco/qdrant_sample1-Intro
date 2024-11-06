@@ -20,6 +20,13 @@ We input the verification code and press Sing UP button
 
 ![image](https://github.com/user-attachments/assets/d007beb1-4245-460d-9823-b15350d6bebb)
 
+We enter in the main landing page 
+
+![image](https://github.com/user-attachments/assets/2b0b5067-0997-4fe7-994b-7ef84b652b65)
+
+If we press in the Data Access Control button we can manage the API Keys
+
+![image](https://github.com/user-attachments/assets/1623a674-ada0-4ed7-bb58-6fdb0c4070b7)
 
 
 
