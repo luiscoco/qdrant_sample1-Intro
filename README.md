@@ -1,5 +1,7 @@
 # Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
 
+This sample demonstrates a typical workflow of creating a vector collection, adding data points with metadata, and performing similarity searches with optional filtering based on metadata
+
 ## 1. Introduction to Qdrant
 
 **Qdrant** is an open-source, high-performance **vector search database** specifically designed for applications that require searching, filtering, and querying large collections of unstructured data, such as text, images, or embeddings (dense vectors)
@@ -90,5 +92,123 @@ We verify in **Docker Desktop**
 
 ![image](https://github.com/user-attachments/assets/253e659a-58e8-48ef-b198-15c1fa7d1951)
 
-## 5. 
+## 5. This Sample Repo Code Explanation
+
+This C# code demonstrates how to use the **Qdrant** vector search engine with a **gRPC** interface
+
+**Qdrant** is a high-performance **vector database** optimized for AI-driven applications
+
+Here's a breakdown of what the code does:
+
+**Client Initialization**: A **QdrantClient** instance is created to connect to **Qdrant running** on **localhost** on **port 6334**
+
+This client uses the **gRPC** interface provided by Qdrant for communication
+
+**Creating a Collection**: **CreateCollectionAsync** is called to create a new collection named "test_collection" in Qdrant
+
+The collection is configured with vector parameters:
+
+**Size = 4** indicates each vector in this collection has 4 dimensions
+
+**Distance = Distance.Dot** specifies the distance function for similarity as "Dot Product."
+
+**Inserting Data (Upsert)**:
+
+UpsertAsync inserts or updates points (vector data points) in "test_collection"
+
+Each point contains:
+
+An **Id** (identifier).
+
+A **Vectors array** with four float values, representing the vector
+
+A **Payload** dictionary with key-value pairs for additional . For instance, each point here has a "city" field with a city name as its value (e.g., "Berlin", "London").
+
+**operationInfo logs** information about the insertion operation.
+
+**Querying the Collection**: **QueryAsync** searches for vectors in "test_collection" based on similarity to a given query vector (new float[] { 0.2f, 0.1f, 0.9f, 0.7f })
+
+The **first query** (searchResult1) retrieves the top 3 similar vectors to the query vector
+
+The **second query** (searchResult2) filters results to return vectors with a "city" field that matches "London", also limiting results to the top 3 and including payload data in the response
+
+**Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
+
+We can verify and review the whole code:
+
+```csharp
+using Qdrant.Client;
+using Qdrant.Client.Grpc;
+using System.Net.Sockets;
+using static Qdrant.Client.Grpc.Conditions;
+
+// The C# client uses Qdrant's gRPC interface
+var client = new QdrantClient("localhost", 6334);
+
+await client.CreateCollectionAsync(collectionName: "test_collection", vectorsConfig: new VectorParams
+{
+    Size = 4,
+    Distance = Distance.Dot
+});
+
+var operationInfo = await client.UpsertAsync(collectionName: "test_collection", points: new List<PointStruct>
+{
+    new()
+    {
+        Id = 1,
+            Vectors = new float[]
+            {
+                0.05f, 0.61f, 0.76f, 0.74f
+            },
+            Payload = {
+                ["city"] = "Berlin"
+            }
+    },
+    new()
+    {
+        Id = 2,
+            Vectors = new float[]
+            {
+                0.19f, 0.81f, 0.75f, 0.11f
+            },
+            Payload = {
+                ["city"] = "London"
+            }
+    },
+    new()
+    {
+        Id = 3,
+            Vectors = new float[]
+            {
+                0.36f, 0.55f, 0.47f, 0.94f
+            },
+            Payload = {
+                ["city"] = "Moscow"
+            }
+    },
+    // Truncated
+});
+
+Console.WriteLine(operationInfo);
+
+var searchResult1 = await client.QueryAsync(
+    collectionName: "test_collection",
+    query: new float[] { 0.2f, 0.1f, 0.9f, 0.7f },
+    limit: 3
+);
+
+Console.WriteLine(searchResult1);
+
+var searchResult2 = await client.QueryAsync(
+    collectionName: "test_collection",
+    query: new float[] { 0.2f, 0.1f, 0.9f, 0.7f },
+    filter: MatchKeyword("city", "London"),
+    limit: 3,
+    payloadSelector: true
+);
+
+Console.WriteLine(searchResult2);
+```
+
+
 
