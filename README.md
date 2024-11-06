@@ -196,9 +196,9 @@ An **Id** (identifier).
 
 A **Vectors array** with four float values, representing the vector
 
-A **Payload** dictionary with key-value pairs for additional . For instance, each point here has a "city" field with a city name as its value (e.g., "Berlin", "London").
+A **Payload** dictionary with key-value pairs for additional . For instance, each point here has a "city" field with a city name as its value (e.g., "Berlin", "London")
 
-**operationInfo logs** information about the insertion operation.
+**operationInfo logs** information about the insertion operation
 
 **Querying the Collection**: **QueryAsync** searches for vectors in "test_collection" based on similarity to a given query vector (new float[] { 0.2f, 0.1f, 0.9f, 0.7f })
 
@@ -286,7 +286,8 @@ var searchResult1 = await client.QueryAsync(
     limit: 3
 );
 
-Console.WriteLine(searchResult1);
+Console.WriteLine("");
+Console.WriteLine("SearchResult1: " + searchResult1);
 
 var searchResult2 = await client.QueryAsync(
     collectionName: "test_collection",
@@ -296,7 +297,8 @@ var searchResult2 = await client.QueryAsync(
     payloadSelector: true
 );
 
-Console.WriteLine(searchResult2);
+Console.WriteLine("");
+Console.WriteLine("SearchResult2: " + searchResult2);
 ```
 
 ## 8. We run the application and see the results 
