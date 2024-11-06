@@ -303,6 +303,7 @@ Console.WriteLine(searchResult2);
 
 **Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
 
-![image](https://github.com/user-attachments/assets/1d543a8d-451f-44c7-8513-145a507c56d1)
+![image](https://github.com/user-attachments/assets/b3f896dd-fb08-4fcf-8791-db78b64ad15d)
+
 
 
