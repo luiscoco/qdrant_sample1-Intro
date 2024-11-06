@@ -74,13 +74,21 @@ We first have to view the user folder name and set in in the command:
 
 ![image](https://github.com/user-attachments/assets/f1ec286f-9c8d-4277-85e0-fee34451ac8f)
 
-Now we execute the command to run qdrant docker container
+Now we execute the command to **run qdrant docker container**
 
 ```
-docker run -p 6333:6333 - p 6334:6334 ^
--v C:\\Users\\luisc\\luiscocoenriquezvector\\qdrant_storage:/ qdrant / storage:z ^
-qdrant / qdrant
+docker run -p 6333:6333 -p 6334:6334 ^
+-v C:\Users\luisc\luiscocoenriquezvector\qdrant_storage:/qdrant/storage:z ^
+qdrant/qdrant
 ```
 
-## 5.
+![image](https://github.com/user-attachments/assets/b91b727f-c792-47ac-b7db-bad12e20eddf)
+
+We verify in **Docker Desktop**
+
+![image](https://github.com/user-attachments/assets/cfd8b8aa-04e6-44e8-aab6-94b5ed0a32b1)
+
+![image](https://github.com/user-attachments/assets/253e659a-58e8-48ef-b198-15c1fa7d1951)
+
+## 5. 
 
