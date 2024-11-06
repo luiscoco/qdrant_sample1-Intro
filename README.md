@@ -68,9 +68,7 @@ And also we can visit the **DataSets** web page
 
 ![image](https://github.com/user-attachments/assets/1c0e29b8-1bb8-496f-91c6-7f20e34ab3ca)
 
-## 4. 
-
-## 5. Run qdrant in a Docker container
+## 4. Run qdrant in a Docker container
 
 We first have to view the user folder name and set in in the command:
 
@@ -83,3 +81,6 @@ docker run -p 6333:6333 - p 6334:6334 ^
 -v C:\\Users\\luisc\\luiscocoenriquezvector\\qdrant_storage:/ qdrant / storage:z ^
 qdrant / qdrant
 ```
+
+## 5.
+
