@@ -1,6 +1,18 @@
-# qdrant_sample1
+# Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
 
-## Run qdrant in a Docker container
+## 1. 
+
+We navigate to the qdrant web page: https://qdrant.tech/
+
+![image](https://github.com/user-attachments/assets/1916e362-2697-4779-9ab3-a958cd416d1f)
+
+We press the Get Start button 
+
+![image](https://github.com/user-attachments/assets/34543537-ed42-4a44-8945-ad168483e909)
+
+
+
+## 2. Run qdrant in a Docker container
 
 We first have to view the user folder name and set in in the command:
 
