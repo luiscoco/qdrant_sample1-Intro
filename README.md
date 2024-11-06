@@ -118,6 +118,16 @@ We select the framework .NET 9 and press the Create button
 
 ![image](https://github.com/user-attachments/assets/6f460969-77fb-4069-aae6-d2a61847b29c)
 
+For more details about the **Qdrant** for .NET visit these URLs
+
+https://www.nuget.org/packages/Qdrant.Client
+
+![image](https://github.com/user-attachments/assets/47b9adf5-e11d-4e91-9b3e-a5392a4868e6)
+
+https://github.com/qdrant/qdrant-dotnet
+
+![image](https://github.com/user-attachments/assets/6caabcb2-cfe1-4b30-ab2f-0e02b089e004)
+
 ## 7. We input the source code in the Program.cs file
 
 Here's a breakdown of what the code does:
