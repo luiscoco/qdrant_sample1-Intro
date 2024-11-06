@@ -322,4 +322,135 @@ The **second query** (searchResult2) **filters** results to return vectors with 
 ![image](https://github.com/user-attachments/assets/b3f896dd-fb08-4fcf-8791-db78b64ad15d)
 
 
+# Advanced Qdrant and .NET: Implementing Vector Search with Enhanced Features
+
+This advanced guide expands on basic vector operations in Qdrant with .NET by introducing **multi-field filtering**, **batch processing**, **custom distance metrics**, and **indexing** techniques to optimize search performance in large datasets
+
+## 1. Setting Up a Complex Qdrant Collection
+
+Creating a Collection with Custom Distance Metrics
+
+Qdrant supports various distance metrics beyond dot products, such as Euclidean distance and cosine similarity
+
+For applications requiring fine-tuned similarity scoring, use a custom distance metric:
+
+```csharp
+await client.CreateCollectionAsync(
+    collectionName: "advanced_collection",
+    vectorsConfig: new VectorParams
+    {
+        Size = 128,  // Example for higher-dimensional vectors
+        Distance = Distance.Cosine  // Using cosine similarity
+    });
+```
+
+## 2. Advanced Filtering Options for Vector Searches
+
+Multi-Field and Range Filtering
+
+In many scenarios, filtering by multiple fields or numeric ranges provides more precise results. Here’s how to apply multi-field filtering with range conditions:
+
+```csharp
+var searchResult = await client.QueryAsync(
+    collectionName: "advanced_collection",
+    query: new float[] { 0.1f, 0.4f, 0.5f, ... },  // Example query vector
+    filter: And(
+        MatchKeyword("category", "tech"),
+        Range("rating", 4.5f, 5.0f)  // Range filter for ratings between 4.5 and 5
+    ),
+    limit: 10
+);
+```
+
+## 3. Implementing Batch Processing for Efficient Data Insertion
+
+When handling large datasets, batch processing enhances performance by minimizing the number of API calls. Batch insertion example:
+
+```csharp
+var points = new List<PointStruct>();
+for (int i = 0; i < 1000; i++)
+{
+    points.Add(new PointStruct
+    {
+        Id = i,
+        Vectors = GenerateRandomVector(128),  // Custom method to generate 128-dimensional vector
+        Payload = new Dictionary<string, object>
+        {
+            ["category"] = i % 2 == 0 ? "tech" : "health",
+            ["rating"] = RandomRating()
+        }
+    });
+}
+await client.UpsertAsync(collectionName: "advanced_collection", points: points);
+```
+
+##4. Configuring Custom Index Settings
+
+Qdrant’s indexing system can be optimized based on dataset characteristics
+
+Use HNSW (Hierarchical Navigable Small World) parameters for high-speed searches:
+
+```csharp
+await client.UpdateCollectionAsync(
+    collectionName: "advanced_collection",
+    hnswConfig: new HnswConfig
+    {
+        M = 16,  // Controls the number of connections
+        EfConstruction = 200  // Balances accuracy vs. speed
+    });
+```
+
+## 5. Using Vector Quantization for Memory Optimization
+
+For high-dimensional datasets, reducing memory usage via vector quantization can be crucial. This example uses scalar quantization:
+
+```csharp
+await client.SetQuantizationAsync(
+    collectionName: "advanced_collection",
+    quantization: QuantizationType.Scalar
+);
+```
+
+## 6. Real-Time Vector Update and Search
+
+In applications where vectors are continuously updated, it’s essential to support real-time updates
+
+Here’s an example of updating a vector and executing a similarity search immediately after:
+
+```csharp
+await client.UpdatePointAsync(
+    collectionName: "advanced_collection",
+    point: new PointStruct
+    {
+        Id = 100,
+        Vectors = new float[] { 0.3f, 0.5f, ... },
+        Payload = { ["category"] = "updated" }
+    }
+);
+
+var results = await client.QueryAsync(
+    collectionName: "advanced_collection",
+    query: new float[] { 0.3f, 0.5f, ... },
+    limit: 5
+);
+```
+
+## 7. Benchmarking Query Performance
+
+Evaluate query performance using Qdrant’s profiling capabilities
+
+For large-scale production environments, regularly benchmark to fine-tune the parameters
+
+```csharp
+var stopwatch = Stopwatch.StartNew();
+await client.QueryAsync(collectionName: "advanced_collection", query: new float[] { 0.1f, 0.2f, ... });
+stopwatch.Stop();
+Console.WriteLine("Query time: " + stopwatch.ElapsedMilliseconds + " ms");
+```
+
+## Conclusion
+
+This advanced guide provided insights on using Qdrant with .NET for complex vector search operations
+
+By leveraging **filtering**, **batch processing**, **optimized indexing**, and **quantization**, developers can build scalable, **high-performance vector search** solutions
 
