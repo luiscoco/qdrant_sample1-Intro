@@ -102,9 +102,21 @@ Here's a breakdown of what the code does:
 
 **Client Initialization**: A **QdrantClient** instance is created to connect to **Qdrant running** on **localhost** on **port 6334**
 
+```csharp
+var client = new QdrantClient("localhost", 6334);
+```
+
 This client uses the **gRPC** interface provided by Qdrant for communication
 
 **Creating a Collection**: **CreateCollectionAsync** is called to create a new collection named "test_collection" in Qdrant
+
+```csharp
+await client.CreateCollectionAsync(collectionName: "test_collection", vectorsConfig: new VectorParams
+{
+    Size = 4,
+    Distance = Distance.Dot
+});
+```
 
 The collection is configured with vector parameters:
 
@@ -114,7 +126,47 @@ The collection is configured with vector parameters:
 
 **Inserting Data (Upsert)**:
 
-UpsertAsync inserts or updates points (vector data points) in "test_collection"
+**UpsertAsync**: inserts or updates points (vector data points) in "test_collection"
+
+```csharp
+var operationInfo = await client.UpsertAsync(collectionName: "test_collection", points: new List<PointStruct>
+{
+    new()
+    {
+        Id = 1,
+            Vectors = new float[]
+            {
+                0.05f, 0.61f, 0.76f, 0.74f
+            },
+            Payload = {
+                ["city"] = "Berlin"
+            }
+    },
+    new()
+    {
+        Id = 2,
+            Vectors = new float[]
+            {
+                0.19f, 0.81f, 0.75f, 0.11f
+            },
+            Payload = {
+                ["city"] = "London"
+            }
+    },
+    new()
+    {
+        Id = 3,
+            Vectors = new float[]
+            {
+                0.36f, 0.55f, 0.47f, 0.94f
+            },
+            Payload = {
+                ["city"] = "Moscow"
+            }
+    },
+    // Truncated
+});
+```
 
 Each point contains:
 
@@ -130,7 +182,25 @@ A **Payload** dictionary with key-value pairs for additional . For instance, eac
 
 The **first query** (searchResult1) retrieves the top 3 similar vectors to the query vector
 
+```csharp
+var searchResult1 = await client.QueryAsync(
+    collectionName: "test_collection",
+    query: new float[] { 0.2f, 0.1f, 0.9f, 0.7f },
+    limit: 3
+);
+```
+
 The **second query** (searchResult2) filters results to return vectors with a "city" field that matches "London", also limiting results to the top 3 and including payload data in the response
+
+```csharp
+var searchResult2 = await client.QueryAsync(
+    collectionName: "test_collection",
+    query: new float[] { 0.2f, 0.1f, 0.9f, 0.7f },
+    filter: MatchKeyword("city", "London"),
+    limit: 3,
+    payloadSelector: true
+);
+```
 
 **Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
 
