@@ -24,16 +24,27 @@ We enter in the main landing page
 
 ![image](https://github.com/user-attachments/assets/2b0b5067-0997-4fe7-994b-7ef84b652b65)
 
-## 3. Creating a new Cluster in Qdrant and the API Key
+## 2. Creating a new Cluster in Qdrant and the API Key
 
 We navigate to the Overview option or to the Cluster option and we create a new cluster
 
 ![image](https://github.com/user-attachments/assets/49afb267-7033-43b2-9b49-7bd7a2872fe7)
 
+We copy the API Key to access to the Cluster Dashboard
 
-## 4. 
+![image](https://github.com/user-attachments/assets/03f96a32-aa9b-49ef-9947-4c58171d8c7b)
 
-## 5. Run qdrant in a Docker container
+We navigate to the Cluster web page and we select the Dashboard option
+
+![image](https://github.com/user-attachments/assets/f7d1217a-fc1d-4b95-a4b2-eb31e707aa45)
+
+We navigate into the Dashboard after accessing with the API Key
+
+![image](https://github.com/user-attachments/assets/fac943ae-33fd-439c-bb23-c74ca22d6c42)
+
+## 3. 
+
+## 4. Run qdrant in a Docker container
 
 We first have to view the user folder name and set in in the command:
 
