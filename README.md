@@ -1,6 +1,6 @@
 # Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
 
-## Introduction to Qdrant
+## 1. Introduction to Qdrant
 
 **Qdrant** is an open-source, high-performance **vector search database** specifically designed for applications that require searching, filtering, and querying large collections of unstructured data, such as text, images, or embeddings (dense vectors)
 
@@ -8,7 +8,7 @@ It uses **Approximate Nearest Neighbor (ANN)** algorithms and provides a scalabl
 
 **Qdrant** helps businesses and developers leverage **vector embeddings** in real-world applications, offering robust performance and flexibility for working with high-dimensional data
 
-## 1. Welcome to Qdrant
+## 2. How to Sign Up and Log In to Qdrant: A Step-by-Step Guide
 
 We navigate to the qdrant web page: https://qdrant.tech/
 
@@ -32,7 +32,7 @@ We enter in the main landing page
 
 ![image](https://github.com/user-attachments/assets/2b0b5067-0997-4fe7-994b-7ef84b652b65)
 
-## 2. Creating a new Cluster in Qdrant and the API Key
+## 3. Creating a new Cluster in Qdrant and the API Key
 
 We navigate to the Overview option or to the Cluster option and we create a new cluster
 
@@ -68,9 +68,9 @@ And also we can visit the **DataSets** web page
 
 ![image](https://github.com/user-attachments/assets/1c0e29b8-1bb8-496f-91c6-7f20e34ab3ca)
 
-## 3. 
+## 4. 
 
-## 4. Run qdrant in a Docker container
+## 5. Run qdrant in a Docker container
 
 We first have to view the user folder name and set in in the command:
 
