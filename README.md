@@ -34,13 +34,24 @@ We copy the API Key to access to the Cluster Dashboard
 
 ![image](https://github.com/user-attachments/assets/03f96a32-aa9b-49ef-9947-4c58171d8c7b)
 
-We navigate to the Cluster web page and we select the Dashboard option
+We navigate to the **Cluster** web page and we select the **Dashboard** option
 
 ![image](https://github.com/user-attachments/assets/f7d1217a-fc1d-4b95-a4b2-eb31e707aa45)
 
-We navigate into the Dashboard after accessing with the API Key
+We navigate into the **Dashboard** after accessing with the **API Key**
 
 ![image](https://github.com/user-attachments/assets/fac943ae-33fd-439c-bb23-c74ca22d6c42)
+
+If we select in the first menu option we see the **Welcome Page** with some samples
+
+![image](https://github.com/user-attachments/assets/eda8f1c5-a66c-4088-a3f9-a689137bed1d)
+
+In the second option we see the **Console**
+
+![image](https://github.com/user-attachments/assets/d912882c-dda7-402f-99b3-589462ce6e1a)
+
+In the third menu option we access the **Collections**
+
 
 ## 3. 
 
