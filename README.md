@@ -24,12 +24,12 @@ We enter in the main landing page
 
 ![image](https://github.com/user-attachments/assets/2b0b5067-0997-4fe7-994b-7ef84b652b65)
 
-If we press in the Data Access Control button we can manage the API Keys
+## 3. Creating a new Cluster in Qdrant and the API Key
 
-![image](https://github.com/user-attachments/assets/b3772ed7-9e8a-4784-b851-eba598f29501)
+We navigate to the Overview option or to the Cluster option and we create a new cluster
 
+![image](https://github.com/user-attachments/assets/49afb267-7033-43b2-9b49-7bd7a2872fe7)
 
-## 3. Creating a new Cluster in Qdrant
 
 ## 4. 
 
