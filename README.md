@@ -201,9 +201,6 @@ var searchResult2 = await client.QueryAsync(
     payloadSelector: true
 );
 ```
-
-**Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
-
 We can verify and review the whole code:
 
 ```csharp
@@ -279,6 +276,10 @@ var searchResult2 = await client.QueryAsync(
 
 Console.WriteLine(searchResult2);
 ```
+
+## 6. We run the application and see the results 
+
+**Output**: operationInfo, searchResult1, and searchResult2 are printed to the console to display the results of each operation
 
 
 
