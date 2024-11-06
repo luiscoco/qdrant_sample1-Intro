@@ -26,11 +26,14 @@ We enter in the main landing page
 
 If we press in the Data Access Control button we can manage the API Keys
 
-![image](https://github.com/user-attachments/assets/1623a674-ada0-4ed7-bb58-6fdb0c4070b7)
+![image](https://github.com/user-attachments/assets/b3772ed7-9e8a-4784-b851-eba598f29501)
 
 
+## 3. Creating a new Cluster in Qdrant
 
-## 2. Run qdrant in a Docker container
+## 4. 
+
+## 5. Run qdrant in a Docker container
 
 We first have to view the user folder name and set in in the command:
 
