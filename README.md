@@ -1,6 +1,6 @@
 # Getting Started with Qdrant and .NET: Sample Code for Vector Search with gRPC
 
-## Introduction
+## Introduction to Qdrant
 
 **Qdrant** is an open-source, high-performance **vector search database** specifically designed for applications that require searching, filtering, and querying large collections of unstructured data, such as text, images, or embeddings (dense vectors)
 
